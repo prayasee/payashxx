@@ -1,201 +1,130 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Happy Birthday, Puinturi 🎂</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<style>
-:root{--rose:#e0507a;--pink:#ffd1dc;--lav:#e2c0ff;--ink:#5a2a45;--card:rgba(255,255,255,.78)}
-*{box-sizing:border-box;margin:0}
-body{font:17px/1.65 'Quicksand',system-ui,sans-serif;color:var(--ink);min-height:100vh;background:linear-gradient(135deg,#fff0f5,#ffe5ec 50%,#f3e8ff);padding-bottom:env(safe-area-inset-bottom)}
-header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top));display:flex;justify-content:center;border-bottom:1px solid var(--pink)}
-nav{display:flex;gap:4px;background:#ffe5ec;border-radius:99px;padding:4px;overflow-x:auto;max-width:100%}
-nav button{border:0;background:none;font:700 14px 'Quicksand',sans-serif;color:var(--ink);padding:8px 14px;border-radius:99px;cursor:pointer;white-space:nowrap}
-nav button.on{background:#fff;color:var(--rose);box-shadow:0 1px 4px #0002}
-button:focus-visible,input:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
-main{max-width:820px;margin:0 auto;padding:34px 18px 60px}
-section{display:none}section.on{display:block}
-h1{font:700 clamp(40px,10vw,76px)/1.05 'Dancing Script',cursive;color:var(--rose);text-align:center}
-h2{font:700 clamp(30px,6vw,42px) 'Dancing Script',cursive;color:var(--rose);text-align:center}
-.lead{text-align:center;max-width:46ch;margin:14px auto 24px}
-.k{text-align:center;font-weight:700;color:#b06;margin-bottom:6px}
-.box{background:var(--card);border-radius:24px;padding:22px;margin-top:22px;box-shadow:0 6px 24px #e0507a22}
-.btn{background:var(--rose);color:#fff;border:0;border-radius:99px;padding:12px 24px;font:700 16px 'Quicksand',sans-serif;cursor:pointer}
-.c{text-align:center}
-/* cake */
-.cake{width:200px;margin:10px auto 0;text-align:center;cursor:pointer;user-select:none}
-.candles{display:flex;justify-content:center;gap:26px;height:58px;align-items:flex-end}
-.candle{width:10px;height:34px;background:#fff;border:2px solid var(--pink);border-radius:3px;position:relative}
-.candle:before{content:"🔥";position:absolute;top:-30px;left:-7px;font-size:22px;transition:opacity .4s}
-.out .candle:before{opacity:0}
-.tier{height:46px;background:#ffb3c6;border-radius:10px;margin:0 auto}.t1{width:150px}.t2{width:200px;background:#ff8fab}
-#wish{min-height:28px;margin-top:10px;font-weight:700;color:var(--rose)}
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
-.gal figure{background:#fff;border-radius:16px;padding:8px 8px 12px;box-shadow:0 4px 14px #0001}
-.gal img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 22%;border-radius:10px;background:var(--pink);display:block}
-.gal figcaption{text-align:center;font-size:15px;margin-top:6px}
-/* songs */
-.player{background:linear-gradient(135deg,#e0507a,#a259d9);color:#fff;border-radius:24px;padding:22px;text-align:center}
-.player h3{font-size:22px}
-.ctl{display:flex;justify-content:center;gap:12px;margin:14px 0}
-.ctl button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--rose);font-size:18px;cursor:pointer}
-#bar{height:8px;background:#fff4;border-radius:9px;cursor:pointer}#bar i{display:block;height:100%;width:0;background:#fff;border-radius:9px}
-.song{display:flex;justify-content:space-between;width:100%;border:0;background:#fff;border-radius:14px;padding:12px 16px;margin-top:8px;font:600 16px 'Quicksand',sans-serif;color:var(--ink);cursor:pointer}
-.song.on{background:var(--pink)}
-/* games */
-#arena{position:relative;height:300px;border-radius:18px;background:#fff9;overflow:hidden;margin-top:12px;touch-action:none}
-#bask{position:absolute;bottom:4px;left:50%;font-size:40px;transform:translateX(-50%)}
-.h{position:absolute;font-size:28px}
-.scr{position:relative;width:min(100%,320px);height:150px;margin:14px auto 0;border-radius:18px;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px;overflow:hidden}
-.scr canvas{position:absolute;inset:0;touch-action:none;cursor:crosshair}
-/* reasons */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px}
-.fl{perspective:800px;height:120px;border:0;background:none;cursor:pointer;font:inherit}
-.fl>div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
-.fl.f>div{transform:rotateY(180deg)}
-.fl span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;border-radius:18px;backface-visibility:hidden;font-weight:700}
-.fa{background:var(--pink);font-size:32px}.fb{background:#fff;transform:rotateY(180deg);font-size:15px;color:var(--ink)}
-#gen{margin-top:16px;min-height:52px;text-align:center;font-weight:700;color:var(--rose)}
-/* vault */
-.lock{max-width:380px;margin:0 auto;text-align:center}
-.lock input{width:100%;padding:12px;border-radius:12px;border:2px solid var(--pink);text-align:center;font:700 18px 'Quicksand',sans-serif;margin:14px 0}
-#err{color:#c0392b;min-height:24px;font-size:15px}
-.letter{background:#fff;border-radius:6px 26px 6px 26px;padding:30px 26px;line-height:1.9;font-size:18px;box-shadow:0 6px 24px #e0507a22}
-.letter p+p{margin-top:14px}.sig{font:700 28px 'Dancing Script',cursive;color:var(--rose)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body>
-<header><nav id="nav"></nav></header>
-<main>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Prayas Das — Electrical Engineering student, researcher and technology enthusiast. Projects in energy systems, IoT, embedded systems and intelligent mobility.">
+  <meta property="og:title" content="Prayas Das | Electrical Engineer">
+  <meta property="og:description" content="Engineering portfolio, projects, research and technical interests.">
+  <title>Prayas Das | Electrical Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Prayas Das home"><span class="brand-mark">P<span>.</span></span><span>PRAYAS DAS</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#about">About</a><a href="#education">Education</a><a href="#projects">Projects</a>
+      <a href="#research">Research</a><a href="#skills">Skills</a><a href="#contact" class="nav-contact">Contact ↗</a>
+    </nav>
+  </header>
 
-<section id="home" class="on">
-  <p class="k">5 October, celebrated a few days late 🎂</p>
-  <h1>Happy 23rd Birthday, Puinturi!</h1>
-  <p class="lead">Anulekha, this little corner of the internet is made only for you, from a friend who is always on your side. Make a wish, blow out the candles, and enjoy your day.</p>
-  <div class="cake" id="cake" role="button" tabindex="0" aria-label="Blow out the candles">
-    <div class="candles"><div class="candle"></div><div class="candle"></div><div class="candle"></div></div>
-    <div class="tier t1"></div><div class="tier t2"></div>
-  </div>
-  <p class="c" id="wish">Tap the cake to blow out the candles 🍓</p>
-  <p class="c" id="cd" style="margin-top:10px;font-size:15px"></p>
-  <div class="box"><h2>Just you ✨</h2><div class="gal" id="gal"></div></div>
-</section>
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> ELECTRICAL ENGINEERING · INDIA</p>
+        <h1>Engineering ideas<br>into <em>real impact.</em></h1>
+        <p class="hero-lead">I’m <strong>Prayas Das</strong> — an Electrical Engineering undergraduate interested in energy systems, intelligent mobility, embedded technology and data-driven solutions.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="button button-ghost" href="#contact">Get in touch <span>↗</span></a>
+        </div>
+        <div class="hero-meta"><span>BASED IN WEST BENGAL, INDIA</span><span>OPEN TO LEARNING & COLLABORATION</span></div>
+      </div>
+      <div class="hero-art" aria-label="Abstract electrical circuit illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="circuit-card">
+          <div class="circuit-top"><span>ENGINEERING / 01</span><span class="pulse">● LIVE IDEAS</span></div>
+          <svg viewBox="0 0 440 330" role="img" aria-label="Abstract circuit board illustration">
+            <defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#50e3c2"/><stop offset="1" stop-color="#8b9cff"/></linearGradient></defs>
+            <g fill="none" stroke="url(#line)" stroke-width="2">
+              <path d="M25 165H105V95H170M105 165V240H190M170 95H220V55H330M220 55V120H280M190 240H250V280H360M280 120H370V175H415M330 55V25H400M370 175H405V240"/>
+              <path d="M25 115H65V65H120M45 210H80V275H145M250 120V180H310V230H360"/>
+              <rect x="170" y="130" width="80" height="70" rx="8"/><path d="M185 150h50m-50 15h50m-50 15h32"/>
+            </g>
+            <g fill="#50e3c2"><circle cx="25" cy="165" r="5"/><circle cx="330" cy="55" r="5"/><circle cx="360" cy="280" r="5"/><circle cx="415" cy="175" r="5"/><circle cx="120" cy="65" r="5"/></g>
+            <g fill="#8b9cff"><circle cx="170" cy="95" r="4"/><circle cx="190" cy="240" r="4"/><circle cx="280" cy="120" r="4"/><circle cx="360" cy="230" r="4"/></g>
+          </svg>
+          <div class="circuit-bottom"><span>POWER · CONTROL · COMPUTING</span><span>PD—2026</span></div>
+        </div>
+        <div class="floating-chip chip-a">IoT / EMBEDDED</div><div class="floating-chip chip-b">ENERGY SYSTEMS</div>
+      </div>
+      <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+    </section>
 
-<section id="songs">
-  <h2>Our Birthday Jukebox 🎵</h2>
-  <p class="lead">Songs that remind me of good times.</p>
-  <div class="player"><p>Now playing</p><h3 id="pt">-</h3><p id="pa"></p>
-    <div class="ctl"><button id="prev" aria-label="Previous">⏮</button><button id="pp" aria-label="Play or pause">▶</button><button id="next" aria-label="Next">⏭</button></div>
-    <div id="bar"><i></i></div><p id="note" style="font-size:14px;margin-top:8px"></p></div>
-  <div id="list"></div><audio id="au"></audio>
-</section>
+    <section class="intro-strip">
+      <div><strong>01</strong><span>Curiosity-led engineering</span></div><div><strong>02</strong><span>Research & experimentation</span></div><div><strong>03</strong><span>Practical problem solving</span></div>
+    </section>
 
-<section id="games">
-  <h2>Birthday Arcade 🎮</h2>
-  <div class="box"><h3>Game 1: Catch the Hearts</h3>
-    <p>Move the basket with your finger or mouse. Catch 10 hearts!</p>
-    <p><b>Score: <span id="sc">0</span> / 10</b> <button class="btn" id="go" style="margin-left:10px">Start</button></p>
-    <div id="arena"><div id="bask">🧺</div></div></div>
-  <div class="box c"><h3>Game 2: Scratch Card</h3><p>Scratch to reveal your birthday prize.</p>
-    <div class="scr"><b style="font-size:20px" id="prize"></b><span id="prize2" style="font-size:14px"></span><canvas id="scv"></canvas></div></div>
-</section>
+    <section class="section-wrap section" id="about">
+      <div class="section-heading"><p class="eyebrow">01 / ABOUT</p><h2>Curious by nature.<br><em>Engineer by choice.</em></h2></div>
+      <div class="about-grid">
+        <p class="about-statement">I enjoy exploring how electrical systems, intelligent control and connected devices can solve practical problems.</p>
+        <div class="about-detail"><p>I completed a Diploma in Electrical Engineering and am pursuing a B.Tech in Electrical Engineering. Alongside academics, I take part in student coordination, innovation activities and technical projects.</p><p>My current interests include renewable-energy integration, power and control systems, IoT, embedded systems, machine learning applications and electric mobility.</p><div class="tag-row"><span>Problem solving</span><span>Team coordination</span><span>Continuous learning</span></div></div>
+      </div>
+    </section>
 
-<section id="reasons">
-  <h2>Reasons You're Special 💌</h2>
-  <p class="lead">Tap any note to flip it.</p>
-  <div class="cards" id="cards"></div>
-  <p id="gen"></p><p class="c"><button class="btn" id="genb">Another sweet reason ✨</button></p>
-</section>
+    <section class="section-wrap section" id="education">
+      <div class="section-heading"><p class="eyebrow">02 / EDUCATION</p><h2>Academic <em>foundation.</em></h2></div>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-date">CURRENT</div><div><h3>B.Tech — Electrical Engineering</h3><p class="institution">Ghani Khan Choudhury Institute of Engineering & Technology (GKCIET)</p><p>Affiliated to MAKAUT · Lateral entry · Undergraduate studies</p></div><span class="timeline-index">01</span></article>
+        <article class="timeline-item"><div class="timeline-date">COMPLETED · 2024</div><div><h3>Diploma — Electrical Engineering</h3><p class="institution">Falakata Polytechnic Institute</p><p>Foundation in electrical engineering principles and practical laboratory work.</p></div><span class="timeline-index">02</span></article>
+      </div>
+      <p class="small-note">Update your current semester and graduation year in <code>index.html</code> whenever they change.</p>
+    </section>
 
-<section id="secret">
-  <div id="lock" class="lock box"><div style="font-size:44px">🔒</div><h2>The Vault</h2>
-    <p>Enter the passcode to open a message just for you.</p>
-    <p style="font-size:14px" id="hint"></p>
-    <input id="code" type="password" placeholder="Passcode" autocomplete="off">
-    <p id="err"></p><button class="btn" id="open">Unlock ✨</button></div>
-  <div id="letter" style="display:none">
-    <div class="letter">
-      <p>Dear Puinturi,</p>
-      <p>Happy 23rd birthday. I'm sorry this reaches you a few days late, but I wanted to make something that was truly yours.</p>
-      <p>Our story began on 25 October 2022, and we talked so much in text that it felt like we had known each other forever. Then came the bus rides to college together. Honestly, those journeys were the best part of my days because of your company. We went through so many situations, funny and difficult and beautiful, and I remember the times we met at your house too.</p>
-      <p>I loved you, and you were the best part of my life. Thank you for everything you gave me: your love, your care, every experience we shared. Thank you for my first hug, my first kiss, and all the firsts I got to have with you. You were special to me, and I will always remember those moments with gratitude.</p>
-      <p>I don't want any of this to ruin our friendship, and I'm not asking for anything in return. Whatever life brings, I will always be beside you as your friend, for the rest of my life. If you ever need someone, I'll be there.</p>
-      <p>Happy birthday, Puinturi. Keep smiling.</p>
-      <p class="sig">Your friend, Prayash</p></div>
-    <p class="c" style="margin-top:20px"><button class="btn" id="fw">Launch birthday fireworks 🎆</button></p>
-  </div>
-</section>
-</main>
+    <section class="section-wrap section" id="projects">
+      <div class="section-heading"><p class="eyebrow">03 / SELECTED WORK</p><h2>Projects built around<br><em>real-world problems.</em></h2></div>
+      <div class="project-grid">
+        <article class="project-card project-featured"><div class="project-number">PROJECT / 01</div><div class="project-icon">⌁</div><h3>Smart Home Energy Management with Solar Integration</h3><p>A proposed IoT-enabled energy management concept exploring solar utilisation, battery storage and intelligent load scheduling using Model Predictive Control (MPC).</p><div class="tag-row"><span>Solar PV</span><span>MPC</span><span>IoT</span><span>Energy storage</span></div><div class="project-foot"><span>ENERGY SYSTEMS</span><span>↗</span></div></article>
+        <article class="project-card"><div class="project-number">PROJECT / 02</div><div class="project-icon">⌗</div><h3>IoT RFID Attendance System</h3><p>An RFID-based attendance concept using NodeMCU ESP8266 and RC522, with attendance records connected to Google Sheets.</p><div class="tag-row"><span>ESP8266</span><span>RFID RC522</span><span>Google Sheets</span></div><div class="project-foot"><span>EMBEDDED & IoT</span><span>↗</span></div></article>
+        <article class="project-card"><div class="project-number">PROJECT / 03</div><div class="project-icon">↗</div><h3>Human-Centric E-Bike Control</h3><p>Data-driven torque optimisation research concept combining rider and vehicle signals to explore adaptive motor assistance and energy-aware control.</p><div class="tag-row"><span>Machine Learning</span><span>MATLAB</span><span>Electric mobility</span></div><div class="project-foot"><span>INTELLIGENT MOBILITY</span><span>↗</span></div></article>
+      </div>
+      <p class="small-note">Project descriptions are concise summaries. Add GitHub repositories, diagrams, results and demo links when available.</p>
+    </section>
 
-<script>
-/* ========= EDIT THIS PART ========= */
-const MEET=new Date("2026-10-10T00:00:00");
-const PASSCODE="puinturi";            // lowercase
-const HINT="Hint: your nickname 😉";
-const PHOTOS=[["photo1.jpg","Elegant in black ✨"],["photo2.jpg","That smile 🌿"],["photo3.jpg","Always glowing"],["photo4.jpg","Simple and sweet"],["photo5.jpg","Cake time 🍰"],["photo6.jpg","Caught mid-smile"],["photo7.jpg","The funniest faces 😂"],["photo8.jpg","Deep in thought"],["photo9.jpg","Flying kiss 😘"],["photo10.jpg","Cutie mode 🌷"],["photo11.jpg","Curtains and curiosity"],["photo12.jpg","Pure laughter 😄"],["photo13.jpg","Laughing it out"]];
-const SONGS=[  // put mp3 files in the same folder and fill in src, e.g. "is-this-love.mp3"
-  {title:"Is This Love",artist:"Mohit Chauhan",src:""},
-  {title:"Prem Jeno Purno Holo",artist:"Rupak Tiwary",src:""},
-  {title:"Subhanallah",artist:"",src:""},
-  {title:"Pappu Can't Dance",artist:"Benny Dayal, Naresh",src:""}
-];
-const PRIZE=["1x Chai & Chat Coupon ☕","Valid whenever you feel like it, no strings attached"];
-const REASONS=[["😂","Your laugh","It could turn any heavy day into a light one."],
- ["🌼","Your kindness","The way you treat people says a lot about you."],
- ["🧠","Your mind","You notice details and make conversations meaningful."],
- ["💪","Your strength","Write something real you admire here."],
- ["🎀","Your little habits","Write a specific, funny habit here."],
- ["🤝","Your support","Write a moment she was there for you."]];
-const MORE=["You make people feel at ease.","Your smile is genuinely contagious.","You work harder than you admit.","You deserve every good thing this year."];
-/* =================================== */
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-// nav
-const TABS=[["home","🏠 Home"],["songs","🎵 Songs"],["games","🎮 Games"],["reasons","💌 Reasons"],["secret","🔐 Secret"]];
-$('#nav').innerHTML=TABS.map(t=>`<button data-t="${t[0]}">${t[1]}</button>`).join('');
-function show(id){$$('section').forEach(s=>s.classList.toggle('on',s.id===id));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));scrollTo(0,0);if(id==='secret')$('#hint').textContent=HINT;if(id==='games')initScratch()}
-$$('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));show('home');
-// countdown
-function cd(){const d=MEET-new Date();$('#cd').textContent=d>0?`See you in ${Math.floor(d/864e5)}d ${Math.floor(d/36e5)%24}h ${Math.floor(d/6e4)%60}m ⏳`:'Today is the day 🎉'}cd();setInterval(cd,6e4);
-// cake
-function blow(){const c=$('#cake');if(c.classList.contains('out'))return;c.classList.add('out');$('#wish').textContent='Your wish is on its way 🌟 Happy Birthday!';confetti&&confetti({particleCount:140,spread:90,origin:{y:.5}})}
-$('#cake').onclick=blow;$('#cake').onkeydown=e=>{if(e.key==='Enter'||e.key===' ')blow()};
-// gallery
-$('#gal').innerHTML=PHOTOS.map(p=>`<figure><img src="${p[0]}" alt="${p[1]}" loading="lazy"><figcaption>${p[1]}</figcaption></figure>`).join('');
-// songs
-const au=$('#au');let si=0;
-$('#list').innerHTML=SONGS.map((s,i)=>`<button class="song" data-i="${i}"><span>${s.title}</span><span>${s.artist}</span></button>`).join('');
-function load(i,play){si=(i+SONGS.length)%SONGS.length;const s=SONGS[si];$('#pt').textContent=s.title;$('#pa').textContent=s.artist;$$('.song').forEach((b,j)=>b.classList.toggle('on',j===si));
- $('#note').textContent=s.src?'':'Add an mp3 file name in the SONGS list to enable playback.';au.src=s.src||'';if(play&&s.src)au.play();$('#pp').textContent=play&&s.src?'⏸':'▶'}
-$$('.song').forEach(b=>b.onclick=()=>load(+b.dataset.i,true));
-$('#pp').onclick=()=>{if(!au.src)return;au.paused?(au.play(),$('#pp').textContent='⏸'):(au.pause(),$('#pp').textContent='▶')};
-$('#prev').onclick=()=>load(si-1,true);$('#next').onclick=()=>load(si+1,true);au.onended=()=>load(si+1,true);
-au.ontimeupdate=()=>$('#bar i').style.width=(au.currentTime/(au.duration||1)*100)+'%';
-$('#bar').onclick=e=>{if(au.duration)au.currentTime=e.offsetX/e.currentTarget.clientWidth*au.duration};
-load(0,false);
-// catch hearts
-let run=false,score=0,hs=[],raf,last=0,bx=.5;
-const ar=$('#arena');
-ar.onpointermove=e=>{const r=ar.getBoundingClientRect();bx=Math.min(.95,Math.max(.05,(e.clientX-r.left)/r.width));$('#bask').style.left=bx*100+'%'};
-$('#go').onclick=()=>{hs.forEach(h=>h.el.remove());hs=[];score=0;$('#sc').textContent=0;run=true;last=performance.now();cancelAnimationFrame(raf);raf=requestAnimationFrame(loop)};
-function loop(t){if(!run)return;const dt=(t-last)/1000;last=t;
- if(Math.random()<dt*1.6){const el=document.createElement('div');el.className='h';el.textContent='💗';const x=Math.random()*.9+.03;el.style.left=x*100+'%';ar.appendChild(el);hs.push({el,x,y:-30})}
- hs=hs.filter(h=>{h.y+=dt*150;h.el.style.top=h.y+'px';
-  if(h.y>240&&h.y<290&&Math.abs(h.x-bx)<.1){score++;$('#sc').textContent=score;h.el.remove();if(score>=10){run=false;confetti&&confetti({particleCount:120,spread:80});alert('You caught them all! 💖')}return false}
-  if(h.y>310){h.el.remove();return false}return true});
- raf=requestAnimationFrame(loop)}
-// scratch
-let sInit=false;
-function initScratch(){if(sInit)return;sInit=true;$('#prize').textContent=PRIZE[0];$('#prize2').textContent=PRIZE[1];
- const c=$('#scv'),r=c.parentElement.getBoundingClientRect();c.width=r.width;c.height=r.height;const x=c.getContext('2d');
- x.fillStyle='#c9b6d9';x.fillRect(0,0,c.width,c.height);x.fillStyle='#fff';x.font='700 18px Quicksand,sans-serif';x.textAlign='center';x.fillText('Scratch here 🎟️',c.width/2,c.height/2+6);
- let d=false;const sc=e=>{if(!d)return;const b=c.getBoundingClientRect();x.globalCompositeOperation='destination-out';x.beginPath();x.arc(e.clientX-b.left,e.clientY-b.top,20,0,7);x.fill()};
- c.onpointerdown=e=>{d=true;sc(e)};c.onpointermove=sc;addEventListener('pointerup',()=>d=false)}
-// reasons
-$('#cards').innerHTML=REASONS.map(r=>`<button class="fl"><div><span class="fa">${r[0]}</span><span class="fb"><b>${r[1]}</b>&nbsp;${r[2]}</span></div></button>`).join('');
-$$('.fl').forEach(b=>b.onclick=()=>b.classList.toggle('f'));
-$('#genb').onclick=()=>{$('#gen').textContent=MORE[Math.floor(Math.random()*MORE.length)]};
-// vault
-function unlock(){if($('#code').value.trim().toLowerCase()===PASSCODE){$('#lock').style.display='none';$('#letter').style.display='block'}else $('#err').textContent='Not quite. Try again 💕'}
-$('#open').onclick=unlock;$('#code').onkeydown=e=>{if(e.key==='Enter')unlock()};
-$('#fw').onclick=()=>{if(!window.confetti)return;let n=0;const t=setInterval(()=>{confetti({particleCount:70,spread:360,startVelocity:30,origin:{x:Math.random(),y:Math.random()*.5}});if(++n>10)clearInterval(t)},350)};
-</script></body></html>
+    <section class="section-wrap section research-section" id="research">
+      <div class="section-heading"><p class="eyebrow">04 / RESEARCH</p><h2>Questions worth<br><em>investigating.</em></h2></div>
+      <div class="research-card">
+        <div class="research-label">RESEARCH FOCUS · ELECTRIC MOBILITY + MACHINE LEARNING</div>
+        <h3>Data-Driven Predictive Torque Optimization for Human-Centric E-Bike Control Using Hybrid ML Models</h3>
+        <p>Exploring how rider-centric signals and operating conditions can inform adaptive e-bike torque assistance. The research direction brings together human-in-the-loop thinking, predictive modelling and energy-aware control.</p>
+        <div class="research-metrics"><div><strong>01</strong><span>Rider & vehicle signals</span></div><div><strong>02</strong><span>Predictive modelling</span></div><div><strong>03</strong><span>Adaptive torque control</span></div></div>
+        <p class="small-note">This is presented as a research focus, not as a claim of publication or acceptance. Add conference and DOI details only after official publication.</p>
+      </div>
+    </section>
+
+    <section class="section-wrap section" id="skills">
+      <div class="section-heading"><p class="eyebrow">05 / TOOLKIT</p><h2>Skills & <em>interests.</em></h2></div>
+      <div class="skills-grid">
+        <div class="skill-group"><span class="skill-index">A</span><h3>Core electrical</h3><p>Electrical machines · Power systems · Power electronics · Control systems · Network theory · Measurements</p></div>
+        <div class="skill-group"><span class="skill-index">B</span><h3>Software & simulation</h3><p>MATLAB · Arduino IDE · PSIM · ETAP · Scilab · VS Code</p></div>
+        <div class="skill-group"><span class="skill-index">C</span><h3>Embedded & digital</h3><p>NodeMCU ESP8266 · ESP32 · RFID RC522 · Sensors · IoT concepts</p></div>
+        <div class="skill-group"><span class="skill-index">D</span><h3>Emerging interests</h3><p>Machine learning · Renewable energy · Smart grids · Electric vehicles · Data-driven optimisation</p></div>
+      </div>
+      <p class="small-note">Keep only tools and skills you can confidently discuss in an interview.</p>
+    </section>
+
+    <section class="section-wrap section involvement-section">
+      <div class="section-heading"><p class="eyebrow">06 / CAMPUS & LEADERSHIP</p><h2>Learning beyond<br><em>the classroom.</em></h2></div>
+      <div class="involvement-list">
+        <div><span>01</span><h3>Student Coordinator — Training & Placement Office</h3><p>GKCIET</p></div>
+        <div><span>02</span><h3>Member — Entrepreneurship Cell</h3><p>GKCIET</p></div>
+        <div><span>03</span><h3>Innovation Idea Pitching Coordinator</h3><p>TechPrabha 2026</p></div>
+        <div><span>04</span><h3>Student event coordination</h3><p>Campus activities & student engagement</p></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-wrap contact-inner"><p class="eyebrow">07 / CONTACT</p><h2>Have an idea?<br><em>Let's connect.</em></h2><p>I'm interested in meaningful engineering conversations, research collaboration and opportunities to learn and contribute.</p><div class="contact-links"><a id="emailLink" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a><a id="githubLink" href="https://github.com/prayasee" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">P<span>.</span></span><span>PRAYAS DAS</span></a><span>DESIGNED TO LEARN · BUILT TO GROW</span><span>© <span id="year"></span> PRAYAS DAS</span></footer>
+</body>
+</html>
