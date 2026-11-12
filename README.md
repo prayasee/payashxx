@@ -1,28 +1,40 @@
-# Prayas Das — Engineering Portfolio
+# Prayas Das — Portfolio (prayas.me)
 
-A responsive static portfolio for GitHub Pages.
+Updated from the supplied portfolio HTML for GitHub Pages and the `prayasee` GitHub account.
 
 ## Files
-- `index.html` — portfolio content and structure
-- `style.css` — responsive visual design
-- `script.js` — mobile navigation and contact links
-- `CNAME` — custom domain (`prayas.me`)
+- `index.html` — website markup
+- `style.css` — original portfolio styling extracted from the HTML
+- `script.js` — interactive effects and contact form mailto handler
+- `assets/` — images extracted from the original HTML
+- `CNAME` — custom domain `prayas.me`
 
 ## Before publishing
-1. Edit `script.js` and replace `YOUR_EMAIL@example.com` with your public contact email.
-2. Replace `YOUR-LINKEDIN` with your actual LinkedIn profile slug/URL.
-3. Review every project, skill and education detail in `index.html`. Remove anything you cannot substantiate.
-4. Add a real resume PDF only if you want one linked from the page. The current design does not invent a resume link.
+1. Review all academic scores, certificates, internship details, paper titles, conference dates and publication claims. These were retained from your supplied portfolio; publish only details you can verify.
+2. Your current status is updated to B.Tech 3rd year / 6th semester. Review the exact semester wording and expected graduation year.
+3. GitHub profile links are updated to `https://github.com/prayasee`.
+4. The original contact details and CV link were retained from your supplied portfolio. Confirm you want your phone number and personal/academic email addresses publicly visible.
+5. Test the contact form: it opens the visitor's email application using `mailto`; it does not send messages through a server.
 
-## Publish
-1. Sign in to the GitHub account that owns `prayasee/prayasee.github.io`.
-2. Open that repository and upload the contents of this folder to the repository root (not the ZIP itself).
-3. In repository Settings → Pages, select **Deploy from a branch**, branch `main`, folder `/ (root)`, then Save.
-4. In Settings → Pages → Custom domain, enter `prayas.me` and save. The `CNAME` file is included in this package.
-5. Wait for DNS to propagate and for GitHub Pages to issue its HTTPS certificate. Then enable **Enforce HTTPS**.
+## Upload to GitHub
+1. Sign in to GitHub as `prayasee`.
+2. Open `https://github.com/prayasee/payashxx` (the repository shown in your screenshot) or the repository you intend to publish from.
+3. Download and extract this ZIP.
+4. In the repository Code tab, choose Add file → Upload files. Upload `index.html`, `style.css`, `script.js`, `CNAME`, and the entire `assets` folder (including all images). Do not upload only the ZIP file.
+5. Commit to the `main` branch. If GitHub asks to replace existing files, confirm only after checking that this is the correct repository.
 
-## Namecheap DNS for GitHub Pages
-Only change DNS after the custom domain is set in GitHub Pages. In Namecheap → Domain List → Manage → Advanced DNS, use these records if they are not already present:
+## Enable GitHub Pages
+Repository → Settings → Pages → Build and deployment:
+- Source: Deploy from a branch
+- Branch: `main`
+- Folder: `/ (root)`
+- Save
+
+## Attach `prayas.me`
+In Settings → Pages → Custom domain, enter `prayas.me` and save. The `CNAME` file is included at the repository root.
+
+## Namecheap DNS
+Namecheap → Domain List → Manage beside `prayas.me` → Advanced DNS. Check existing records first. For GitHub Pages apex domain, configure these A records if missing:
 
 | Type | Host | Value |
 |---|---|---|
@@ -32,7 +44,10 @@ Only change DNS after the custom domain is set in GitHub Pages. In Namecheap →
 | A | @ | 185.199.111.153 |
 | CNAME | www | prayasee.github.io |
 
-Remove conflicting parking/redirect records for `@` or `www` if present. Do not delete unrelated email records (MX/TXT) without checking what they are used for. DNS providers sometimes preconfigure records; inspect before adding duplicates.
+Remove only conflicting parking/redirect records for `@` or `www`. Do not delete MX/TXT records used for email or domain verification. If Namecheap's Education setup installed different records, inspect them before changing anything.
 
-## Important
-This package does not configure your GitHub repository permissions or DNS automatically. GitHub Pages requires admin access to the repository to set a custom domain and publishing source.
+## Final checks
+- Wait for GitHub Pages deployment to finish.
+- Visit `https://prayas.me` and `https://www.prayas.me`.
+- In Settings → Pages, wait for certificate provisioning, then enable **Enforce HTTPS**.
+- DNS and HTTPS provisioning can take time; do not repeatedly change records while propagation is in progress.

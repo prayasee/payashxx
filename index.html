@@ -1,130 +1,936 @@
-<!doctype html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08111f">
-  <meta name="description" content="Prayas Das — Electrical Engineering student, researcher and technology enthusiast. Projects in energy systems, IoT, embedded systems and intelligent mobility.">
-  <meta property="og:title" content="Prayas Das | Electrical Engineer">
-  <meta property="og:description" content="Engineering portfolio, projects, research and technical interests.">
-  <title>Prayas Das | Electrical Engineering Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prayas Das | Electrical Engineer &amp; Researcher</title>
+<meta content="Prayas Das — B.Tech Electrical Engineering student at GKCIET, researcher and IoT/embedded systems enthusiast. Explore electrical engineering projects, research, publications and experience." name="description"/>
+<meta content="Prayas Das, Electrical Engineer, IoT Developer, Embedded Systems, GKCIET, West Bengal, Portfolio" name="keywords"/>
+<meta content="Prayas Das | Electrical Engineer &amp; Researcher" property="og:title"/>
+<meta content="Electrical engineering, intelligent mobility, IoT, embedded systems and research." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;600;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://prayas.me/" rel="canonical"/><link href="style.css" rel="stylesheet"/></head>
 <body>
-  <div class="noise"></div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Prayas Das home"><span class="brand-mark">P<span>.</span></span><span>PRAYAS DAS</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav id="mainNav">
-      <a href="#about">About</a><a href="#education">Education</a><a href="#projects">Projects</a>
-      <a href="#research">Research</a><a href="#skills">Skills</a><a href="#contact" class="nav-contact">Contact ↗</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> ELECTRICAL ENGINEERING · INDIA</p>
-        <h1>Engineering ideas<br>into <em>real impact.</em></h1>
-        <p class="hero-lead">I’m <strong>Prayas Das</strong> — an Electrical Engineering undergraduate interested in energy systems, intelligent mobility, embedded technology and data-driven solutions.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
-          <a class="button button-ghost" href="#contact">Get in touch <span>↗</span></a>
+<!-- LOADER -->
+<div id="loader">
+<div class="loader-logo">PRAYAS DAS</div>
+<div class="loader-bar"><div class="loader-fill"></div></div>
+<div class="loader-text">INITIALIZING SYSTEMS</div>
+</div>
+<!-- NAV -->
+<nav id="navbar">
+<div class="nav-logo">PD.EE</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#publication">Research</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button aria-label="Menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<!-- HERO -->
+<section id="hero">
+<canvas id="circuit-canvas"></canvas>
+<div class="hero-content">
+<div style="margin-bottom:1.5rem;animation:fadeUp 0.8s 0.1s both;">
+<img alt="Prayas Das" src="assets/profile-1.png" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(0,210,255,0.5);box-shadow:0 0 30px rgba(0,210,255,0.3);display:inline-block;"/>
+</div>
+<div class="hero-badge">⚡ AVAILABLE FOR OPPORTUNITIES</div>
+<h1 class="hero-name">PRAYAS DAS</h1>
+<p class="hero-headline">Electrical Engineering Student · Embedded Systems Enthusiast · Research Explorer</p>
+<p class="hero-sub">Building intelligent systems, engineering solutions, and transforming ideas into impactful technology — one circuit at a time.</p>
+<div class="hero-btns">
+<a class="btn-primary" href="https://drive.google.com/file/d/1F8Nb5Gcrf4r5DMMxkr7BEsEKMWwVbQjt/view?usp=sharing" target="_blank">📄 See CV</a>
+<a class="btn-ghost" href="#projects">View Projects</a>
+<a class="btn-ghost" href="#contact">Contact</a>
+</div>
+</div>
+<div class="hero-scroll">
+<span>SCROLL</span>
+<div class="scroll-line"></div>
+</div>
+</section>
+<!-- ABOUT -->
+<section id="about">
+<div class="section-inner">
+<div class="section-eyebrow">ABOUT ME</div>
+<h2 class="section-title">The Engineer<br/>Behind the Vision</h2>
+<div class="about-grid reveal">
+<div class="about-photo-wrap">
+<div class="about-photo-placeholder" style="background:none;border:none;padding:0;">
+<img alt="Prayas Das" src="assets/profile-2.jpg" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;border-radius:14px;border:1px solid rgba(0,210,255,0.2);display:block;box-shadow:0 8px 40px rgba(0,0,0,0.5);"/>
+</div>
+<div class="about-stats">
+<div class="stat-box">
+<div class="stat-num">8.20</div>
+<div class="stat-label">Diploma CGPA</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">6+</div>
+<div class="stat-label">Projects &amp; Builds</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">8+</div>
+<div class="stat-label">Certifications</div>
+</div>
+<div class="stat-box">
+<div class="stat-num">500+</div>
+<div class="stat-label">LinkedIn Connects</div>
+</div>
+<div class="stat-box" style="grid-column:1/-1;">
+<div class="stat-num" style="font-size:1rem;">2 Papers</div>
+<div class="stat-label">1st-Author · PEIS &amp; ICVCS 2026</div>
+</div>
+</div>
+</div>
+<div class="about-text">
+<p class="about-bio">
+          Hi, I'm <strong>Prayas Das</strong> — a third-year <strong>B.Tech Electrical Engineering student</strong> at Ghani Khan Choudhury Institute of Engineering &amp; Technology (GKCIET), Malda (Class of 2027), with a CGPA of <strong>7.82/10</strong>.
+        </p>
+<p class="about-bio">
+          With a strong foundation from my Diploma in Electrical Engineering at <strong>Falakata Polytechnic</strong> (CGPA 8.20/10), I've built hands-on expertise in embedded systems, IoT, and <strong>machine-learning-driven control for electric vehicles</strong>. I'm proficient in <strong>C, Python, MATLAB</strong>, and tools like ETAP, PSIM, and AutoCAD Electrical.
+        </p>
+<p class="about-bio">
+          As <strong>Student Coordinator</strong> for the Training &amp; Placement Office, Finishing School Program, and E-Cell at GKCIET, I lead with impact. I am a <strong>first author on two published research papers</strong> — presented at PEIS 2026 (Malda) and ICVCS 2026 (Kolkata) — applying ML and adaptive control to e-bicycle systems. I also completed an internship at the <strong>Electric Locomotive Shed, Malda (2026)</strong>.
+        </p>
+<div style="position:relative;overflow:hidden;">
+<img alt="Prayas Das" src="assets/profile-3.jpg" style="width:90px;height:90px;border-radius:12px;object-fit:cover;float:right;margin:0 0 0.5rem 1rem;border:1px solid rgba(0,210,255,0.3);box-shadow:0 0 20px rgba(0,210,255,0.15);"/>
+</div>
+<div>
+<div class="about-label">Areas of Interest</div>
+<div class="interest-grid">
+<span class="interest-tag">Embedded Systems</span>
+<span class="interest-tag">VLSI Design</span>
+<span class="interest-tag">Electric &amp; Hybrid Vehicles</span>
+<span class="interest-tag">Microcontrollers</span>
+<span class="interest-tag">IoT</span>
+<span class="interest-tag">Machine Learning</span>
+<span class="interest-tag">Power Electronics</span>
+<span class="interest-tag">Research &amp; Publications</span>
+</div>
+</div>
+<div>
+<div class="about-label">Career Timeline</div>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-year">2009 – 2021</div>
+<div class="tl-title">Mc. William High School</div>
+<div class="tl-sub">Secondary &amp; Higher Secondary · Arts · 90%</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">2021 – 2024</div>
+<div class="tl-title">Falakata Polytechnic</div>
+<div class="tl-sub">Diploma in Electrical Engineering · CGPA 8.20</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">2023</div>
+<div class="tl-title">Autodesk IoT Internship</div>
+<div class="tl-sub">IoT-based system design using Power-MCU</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">2026</div>
+<div class="tl-title">Electric Locomotive Shed, Malda</div>
+<div class="tl-sub">15-day on-site internship — locomotive electrical systems &amp; maintenance</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">2025 – 2027</div>
+<div class="tl-title">GKCIET · B.Tech Electrical Engineering</div>
+<div class="tl-sub">TPO Coordinator · E-Cell Member</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EDUCATION -->
+<section id="education">
+<div class="section-inner">
+<div class="section-eyebrow">EDUCATION</div>
+<h2 class="section-title">Academic<br/>Foundation</h2>
+<p class="section-desc">Building from fundamentals to frontier — a rigorous academic journey in Electrical Engineering.</p>
+<div class="edu-grid reveal">
+<div class="edu-card">
+<div class="edu-icon">🎓</div>
+<div class="edu-inst">Ghani Khan Choudhury Institute of Engineering &amp; Technology</div>
+<div class="edu-degree">B.Tech in Electrical Engineering</div>
+<div class="edu-gpa">📊 CGPA 7.82 / 10 · In Progress</div>
+<div class="edu-period">📍 Malda, West Bengal · 2024 – 2027</div>
+</div>
+<div class="edu-card">
+<div class="edu-icon">⚙️</div>
+<div class="edu-inst">Falakata Polytechnic</div>
+<div class="edu-degree">Diploma in Electrical Engineering</div>
+<div class="edu-gpa">📊 CGPA 8.20 / 10 · Completed</div>
+<div class="edu-period">📍 Alipurduar, WB · 2021 – 2024</div>
+</div>
+<div class="edu-card">
+<div class="edu-icon">📚</div>
+<div class="edu-inst">Mc. William High School</div>
+<div class="edu-degree">Higher Secondary (Class XII) · Arts Stream</div>
+<div class="edu-gpa">📊 Score 90%</div>
+<div class="edu-period">📍 Alipurduar, WB · 2019 – 2021</div>
+</div>
+<div class="edu-card">
+<div class="edu-icon">🏫</div>
+<div class="edu-inst">Mc. William High School</div>
+<div class="edu-degree">Secondary (Class X)</div>
+<div class="edu-gpa">📊 Score 70%</div>
+<div class="edu-period">📍 Alipurduar, WB · 2017 – 2019</div>
+</div>
+</div>
+<div class="section-eyebrow" style="margin-top:3rem;">CERTIFICATIONS</div>
+<h3 style="font-size:1.4rem;font-weight:700;margin-bottom:0.5rem;">Professional Credentials</h3>
+<div class="cert-grid reveal">
+<div class="cert-card">
+<div class="cert-icon">🎤</div>
+<div>
+<div class="cert-name">Research Paper Presentation</div>
+<div class="cert-org">PEIS-2026 · GKCIET · 2026</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🏫</div>
+<div>
+<div class="cert-name">Finishing School Program</div>
+<div class="cert-org">GKCIET Training &amp; Placement Cell · 2026</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🤖</div>
+<div>
+<div class="cert-name">Arduino Training</div>
+<div class="cert-org">Spoken Tutorial · IIT Bombay · 2025</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">📐</div>
+<div>
+<div class="cert-name">Scilab Training</div>
+<div class="cert-org">Spoken Tutorial · IIT Bombay · 2025</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🛰️</div>
+<div>
+<div class="cert-name">Aryabhata Satellite Golden Jubilee</div>
+<div class="cert-org">India Space Week · Spoken Tutorial, IIT Bombay · 2025</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🔌</div>
+<div>
+<div class="cert-name">IoT with Autodesk Electrical</div>
+<div class="cert-org">Power-MCU System Design · 2023</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">🏆</div>
+<div>
+<div class="cert-name">Effective Workplace Skills</div>
+<div class="cert-org">Wadhwani Foundation · 2024</div>
+<div class="cert-score">Score: 82%</div>
+</div>
+</div>
+<div class="cert-card">
+<div class="cert-icon">💻</div>
+<div>
+<div class="cert-name">Basic Computer Application (BCA)</div>
+<div class="cert-org">Mahatma Gandhi Youth Computer Education · 2019</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROJECTS -->
+<section id="projects">
+<div class="section-inner">
+<div class="section-eyebrow">PROJECTS</div>
+<h2 class="section-title">Engineering<br/>In Action</h2>
+<p class="section-desc">Real problems. Real solutions. Every project tells the story of curiosity meeting engineering rigor.</p>
+<div class="projects-grid reveal">
+<div class="project-card">
+<div class="project-num">PROJECT 01 · MAJOR</div>
+<h3 class="project-title">IoT RFID Attendance System using Google Sheets</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> Traditional paper-based attendance is time-consuming, error-prone, and lacks real-time visibility for faculty and management.
+        </p>
+<div class="project-tech">
+<span class="tech-tag">Arduino</span>
+<span class="tech-tag">RFID RC522</span>
+<span class="tech-tag">ESP8266</span>
+<span class="tech-tag">Google Sheets API</span>
+<span class="tech-tag">IoT</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> Automated attendance logging via RFID cards, syncing live data to Google Sheets — accessible from any device, anywhere.
         </div>
-        <div class="hero-meta"><span>BASED IN WEST BENGAL, INDIA</span><span>OPEN TO LEARNING & COLLABORATION</span></div>
-      </div>
-      <div class="hero-art" aria-label="Abstract electrical circuit illustration">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="circuit-card">
-          <div class="circuit-top"><span>ENGINEERING / 01</span><span class="pulse">● LIVE IDEAS</span></div>
-          <svg viewBox="0 0 440 330" role="img" aria-label="Abstract circuit board illustration">
-            <defs><linearGradient id="line" x1="0" x2="1"><stop stop-color="#50e3c2"/><stop offset="1" stop-color="#8b9cff"/></linearGradient></defs>
-            <g fill="none" stroke="url(#line)" stroke-width="2">
-              <path d="M25 165H105V95H170M105 165V240H190M170 95H220V55H330M220 55V120H280M190 240H250V280H360M280 120H370V175H415M330 55V25H400M370 175H405V240"/>
-              <path d="M25 115H65V65H120M45 210H80V275H145M250 120V180H310V230H360"/>
-              <rect x="170" y="130" width="80" height="70" rx="8"/><path d="M185 150h50m-50 15h50m-50 15h32"/>
-            </g>
-            <g fill="#50e3c2"><circle cx="25" cy="165" r="5"/><circle cx="330" cy="55" r="5"/><circle cx="360" cy="280" r="5"/><circle cx="415" cy="175" r="5"/><circle cx="120" cy="65" r="5"/></g>
-            <g fill="#8b9cff"><circle cx="170" cy="95" r="4"/><circle cx="190" cy="240" r="4"/><circle cx="280" cy="120" r="4"/><circle cx="360" cy="230" r="4"/></g>
-          </svg>
-          <div class="circuit-bottom"><span>POWER · CONTROL · COMPUTING</span><span>PD—2026</span></div>
+<div class="project-footer">
+<a class="btn-sm btn-sm-outline" href="https://github.com/prayasee" target="_blank">⟶ GitHub</a>
+<span class="btn-sm btn-sm-solid">6th Sem · 2024</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-num">PROJECT 02 · MAJOR</div>
+<h3 class="project-title">Smart Security System for Farm Protection</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> Farmers lose crops to animals, birds, and fires nightly — with no automated, affordable protection system available.
+        </p>
+<div class="project-tech">
+<span class="tech-tag">PIR Sensor</span>
+<span class="tech-tag">Arduino UNO</span>
+<span class="tech-tag">Buzzer/Alert</span>
+<span class="tech-tag">Fire Sensor</span>
+<span class="tech-tag">Microcontroller</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> A cost-effective embedded system detecting intrusions and fire, triggering alerts — protecting farms 24/7 without human supervision.
         </div>
-        <div class="floating-chip chip-a">IoT / EMBEDDED</div><div class="floating-chip chip-b">ENERGY SYSTEMS</div>
-      </div>
-      <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
-    </section>
+<div class="project-footer">
+<a class="btn-sm btn-sm-outline" href="https://github.com/prayasee" target="_blank">⟶ GitHub</a>
+<span class="btn-sm btn-sm-solid">5th Sem · 2024</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-num">PROJECT 03 · MINOR</div>
+<h3 class="project-title">Monostable Multivibrator using IC 555</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> Precise, adjustable pulse timing circuits are fundamental to embedded systems — understanding their design is critical to hardware development.
+        </p>
+<div class="project-tech">
+<span class="tech-tag">IC 555</span>
+<span class="tech-tag">RC Circuit</span>
+<span class="tech-tag">Oscilloscope</span>
+<span class="tech-tag">PCB Design</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> Successfully designed and implemented a precision monostable circuit, demonstrating mastery of timer ICs and pulse-width control fundamentals.
+        </div>
+<div class="project-footer">
+<a class="btn-sm btn-sm-outline" href="https://github.com/prayasee" target="_blank">⟶ GitHub</a>
+<span class="btn-sm btn-sm-solid">4th Sem · 2023</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-num">PROJECT 04 · IN PROGRESS</div>
+<h3 class="project-title">Human-in-the-Loop E-Bike Adaptive Control</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> Standard e-bikes apply fixed motor assistance regardless of rider fatigue, terrain, or physiological state, reducing efficiency and comfort.
+        </p>
+<div class="project-tech">
+<span class="tech-tag">MATLAB</span>
+<span class="tech-tag">Machine Learning</span>
+<span class="tech-tag">Torque Sensors</span>
+<span class="tech-tag">ESP32</span>
+<span class="tech-tag">Adaptive Control</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> An ML-driven adaptive torque/motor control research build personalizing pedal effort in real-time — basis of two published conference papers.
+        </div>
+<div class="project-footer">
+<a class="btn-sm btn-sm-outline" href="https://github.com/prayasee" target="_blank">⟶ GitHub</a>
+<span class="btn-sm btn-sm-solid" style="background:rgba(0,210,255,0.12);color:var(--cyan);border:1px solid var(--cyan);">🔄 In Progress</span>
+</div>
+</div>
+<div class="project-card">
+<div class="project-num">PROJECT 05 · IN PROGRESS</div>
+<h3 class="project-title">Smart Dustbin – Stepper Motor Controlled</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> Manual waste bins require physical contact and lack any intelligent interaction — a hygiene and efficiency concern in public spaces.
+        </p>
+<div class="project-tech">
+<span class="tech-tag">Stepper Motor</span>
+<span class="tech-tag">Pict Trainer Kit</span>
+<span class="tech-tag">Proximity Sensor</span>
+<span class="tech-tag">Embedded C</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> Sensor-triggered automatic lid mechanism using stepper motor control — enabling touchless, smart waste management.
+        </div>
+<div class="project-footer">
+<a class="btn-sm btn-sm-outline" href="https://github.com/prayasee" target="_blank">⟶ GitHub</a>
+<span class="btn-sm btn-sm-solid" style="background:rgba(0,210,255,0.12);color:var(--cyan);border:1px solid var(--cyan);">🔄 In Progress</span>
+</div>
+</div>
+<div class="project-card" style="position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;right:0;width:140px;height:140px;background:radial-gradient(circle at top right,rgba(0,210,255,0.08),transparent 70%);pointer-events:none;"></div>
+<div class="project-num">PROJECT 06 · FREELANCE · LIVE ✅</div>
+<h3 class="project-title">Supriya's Villa — Girls PG &amp; Hostel Website</h3>
+<p class="project-problem">
+<strong style="color:var(--white)">Problem:</strong> A girls' PG and hostel business near Bongaigaon University had no digital presence — no way for prospective residents to discover rooms, facilities, pricing, or directions online.
+        </p>
+<div style="padding:0.75rem 1rem;background:rgba(0,210,255,0.06);border-left:2px solid var(--blue);border-radius:0 6px 6px 0;font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;">
+<strong style="color:var(--white);">Solution:</strong> Designed and deployed a full business website featuring room listings (single &amp; double sharing), facilities, a photo gallery, step-by-step directions, location map, online booking enquiry form, WhatsApp/Call CTAs, and a live availability tracker.
+        </div>
+<div class="project-tech">
+<span class="tech-tag">HTML</span>
+<span class="tech-tag">CSS</span>
+<span class="tech-tag">JavaScript</span>
+<span class="tech-tag">Netlify</span>
+<span class="tech-tag">Responsive Design</span>
+<span class="tech-tag">WhatsApp Integration</span>
+</div>
+<div class="project-outcome">
+<strong>Outcome:</strong> A fully live, mobile-responsive business website for the client — with room booking enquiries, CCTV/Wi-Fi/facility showcases, and multi-step directions. Deployed on Netlify and credited as Developer &amp; Manager.
+        </div>
+<div class="project-footer">
+<a class="btn-sm btn-sm-solid" href="https://supriya-s-villa.netlify.app/" target="_blank">🌐 View Live Site</a>
+<span class="btn-sm btn-sm-outline" style="border-color:rgba(0,255,136,0.4);color:#00FF88;">✅ Deployed · 2025</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SKILLS -->
+<section id="skills">
+<div class="section-inner">
+<div class="section-eyebrow">SKILLS</div>
+<h2 class="section-title">Technical<br/>Arsenal</h2>
+<p class="section-desc">A growing stack of technical and professional skills, forged through hands-on projects and continuous learning.</p>
+<div class="skills-wrap reveal">
+<div>
+<div class="skills-col-title">TECHNICAL SKILLS</div>
+<div id="tech-skills">
+<div style="display:flex;flex-direction:column;gap:0.7rem;">
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">⚡</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">Electrical Engineering Fundamentals</span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">📡</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">IoT &amp; Embedded Systems <span style="color:var(--muted);font-weight:400;">(Arduino, ESP32, RFID)</span></span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">📐</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">MATLAB / Simulink / Regression Learner</span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">💻</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">C &amp; Python Programming</span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">🔋</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">Power Systems <span style="color:var(--muted);font-weight:400;">(ETAP, PSIM, ANSYS)</span></span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">📏</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">AutoCAD Electrical</span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">🤖</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">ML for Adaptive Control &amp; Torque Optimization</span>
+</div>
+<div onmouseout="this.style.borderColor='rgba(0,210,255,0.12)'" onmouseover="this.style.borderColor='rgba(0,210,255,0.4)'" style="display:flex;align-items:center;gap:0.85rem;padding:0.85rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:border-color 0.2s ease;">
+<span style="font-size:1.3rem;flex-shrink:0;">🌐</span>
+<span style="font-size:0.88rem;font-weight:600;color:var(--white);">HTML / CSS / JavaScript</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="skills-col-title">PROFESSIONAL SKILLS</div>
+<div class="soft-grid">
+<span class="soft-tag">🎯 TPO Coordinator</span>
+<span class="soft-tag">🏫 Finishing School Coordinator</span>
+<span class="soft-tag">🌐 IIT Bombay Ambassador</span>
+<span class="soft-tag">⚡ E-Cell Member</span>
+<span class="soft-tag">🎤 Conference Presenter</span>
+<span class="soft-tag">🏛️ Event Coordinator</span>
+<span class="soft-tag">🔬 Research &amp; Publication</span>
+<span class="soft-tag">📝 Technical Writing</span>
+<span class="soft-tag">🤝 Team Collaboration</span>
+<span class="soft-tag">🚀 Entrepreneurial Thinking</span>
+</div>
+<div class="skills-col-title" style="margin-top:2rem;">LANGUAGES</div>
+<div class="soft-grid">
+<span class="soft-tag">🇬🇧 English – Professional</span>
+<span class="soft-tag">🇧🇩 Bengali – Native</span>
+<span class="soft-tag">🇮🇳 Hindi – Full Proficiency</span>
+</div>
+<div class="skills-col-title" style="margin-top:2rem;">TOOLS &amp; PLATFORMS</div>
+<div class="soft-grid">
+<span class="soft-tag">MATLAB / Simulink</span>
+<span class="soft-tag">ETAP</span>
+<span class="soft-tag">PSIM</span>
+<span class="soft-tag">ANSYS</span>
+<span class="soft-tag">AutoCAD Electrical</span>
+<span class="soft-tag">Arduino IDE</span>
+<span class="soft-tag">Scilab</span>
+<span class="soft-tag">MS Office Suite</span>
+<span class="soft-tag">GitHub</span>
+<span class="soft-tag">Google Workspace</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section id="services">
+<div class="section-inner">
+<div class="section-eyebrow">SERVICES</div>
+<h2 class="section-title" style="text-align:center">What I Can Build<br/>For You</h2>
+<div class="services-label">
+<div class="avail-badge">Available for Freelance &amp; Part-Time Projects</div>
+</div>
+<div class="services-grid reveal">
+<div class="service-card">
+<div class="service-icon">🌐</div>
+<div class="service-title">Business Website Development</div>
+<div class="service-desc">Modern, responsive websites for businesses and startups — clean design, fast loading, and mobile-first.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">🎨</div>
+<div class="service-title">Portfolio Website Development</div>
+<div class="service-desc">Professional portfolio websites for students and professionals. See <a href="https://supriya-s-villa.netlify.app/" style="color:var(--blue);text-decoration:none;" target="_blank">Supriya's Villa</a> — a live client website I built and deployed.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">🚀</div>
+<div class="service-title">Landing Page Design</div>
+<div class="service-desc">High-converting landing pages with compelling copy and design optimized for conversions.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">📡</div>
+<div class="service-title">IoT Project Development</div>
+<div class="service-desc">Custom IoT and embedded systems projects using Arduino, ESP8266, RFID, sensors and microcontrollers.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">📄</div>
+<div class="service-title">Technical Documentation</div>
+<div class="service-desc">Engineering reports, project documentation, research papers and technical write-ups done professionally.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">💼</div>
+<div class="service-title">LinkedIn Profile Optimization</div>
+<div class="service-desc">Personal branding and professional LinkedIn profile enhancement for students and fresh engineers.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">📝</div>
+<div class="service-title">Resume &amp; Portfolio Building</div>
+<div class="service-desc">ATS-friendly, visually compelling resumes and portfolio materials that get you noticed by recruiters.</div>
+</div>
+<div class="service-card">
+<div class="service-icon">⚙️</div>
+<div class="service-title">Engineering Project Guidance</div>
+<div class="service-desc">End-to-end guidance for final year and mini projects — from idea selection to hardware implementation.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RESEARCH -->
+<section id="research">
+<div class="section-inner">
+<div class="section-eyebrow">RESEARCH</div>
+<h2 class="section-title">Future Research<br/>Frontiers</h2>
+<p class="section-desc">The intersection of electrical engineering and emerging technology is where the next revolution will happen. Here's where I'm headed.</p>
+<div class="research-grid reveal">
+<div class="research-card">
+<div class="research-icon">⚡</div>
+<div class="research-title">Smart Grids &amp; Energy Systems</div>
+<div class="research-desc">Exploring intelligent grid infrastructure, demand response, and next-gen power distribution architectures.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">☀️</div>
+<div class="research-title">Renewable Energy Integration</div>
+<div class="research-desc">Research into solar, wind, and hybrid energy systems and their efficient integration into existing grids.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">🔬</div>
+<div class="research-title">VLSI &amp; Microelectronics</div>
+<div class="research-desc">Digital circuit design at the micro and nano scale — laying groundwork for next-generation semiconductor chips and ASICs.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">🚗</div>
+<div class="research-title">Electric &amp; Hybrid Vehicles</div>
+<div class="research-desc">Motor control, battery management systems, and adaptive power delivery for next-generation EV and hybrid vehicle platforms.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">🤖</div>
+<div class="research-title">ML in Electrical Engineering</div>
+<div class="research-desc">Applying machine learning for fault detection, load forecasting, and predictive maintenance in power systems.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">🏭</div>
+<div class="research-title">Industrial Automation</div>
+<div class="research-desc">PLC-based systems, SCADA, and intelligent automation for manufacturing and utility industries.</div>
+</div>
+<div class="research-card">
+<div class="research-icon">📡</div>
+<div class="research-title">IoT in Smart Infrastructure</div>
+<div class="research-desc">Connected sensors and embedded intelligence for smart cities, agriculture, and industrial monitoring.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+<div class="section-inner">
+<div class="section-eyebrow">ACHIEVEMENTS</div>
+<h2 class="section-title">Milestones &amp;<br/>Recognition</h2>
+<div class="achieve-grid reveal">
+<div class="achieve-card" style="border-color:rgba(0,210,255,0.4);">
+<div class="achieve-icon">📄</div>
+<div>
+<div class="achieve-title">2× First-Author Publications</div>
+<div class="achieve-desc">Published at PEIS 2026 (Malda) and ICVCS 2026 (Kolkata) as first author — both on ML-driven adaptive e-bike control.</div>
+</div>
+</div>
+<div class="achieve-card" style="border-color:rgba(0,210,255,0.4);">
+<div class="achieve-icon">🚂</div>
+<div>
+<div class="achieve-title">Electric Locomotive Internship</div>
+<div class="achieve-desc">15-day on-site internship at Electric Locomotive Shed, Malda (2026) — hands-on with real locomotive electrical systems.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">🎯</div>
+<div>
+<div class="achieve-title">Student Coordinator · TPO</div>
+<div class="achieve-desc">Training &amp; Placement coordinator at GKCIET — bridging students with industry opportunities.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">🏫</div>
+<div>
+<div class="achieve-title">Finishing School Coordinator</div>
+<div class="achieve-desc">Student coordinator for GKCIET's Finishing School Program — preparing peers for professional career entry.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">🌐</div>
+<div>
+<div class="achieve-title">IIT Bombay Student Ambassador</div>
+<div class="achieve-desc">Spoken Tutorial Program ambassador — promoting free technical education across campus.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">💡</div>
+<div>
+<div class="achieve-title">E-Cell Member</div>
+<div class="achieve-desc">Active member of Entrepreneurship Cell at GKCIET — fostering startup culture in engineering education.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">⚡</div>
+<div>
+<div class="achieve-title">±800kV HVDC Industrial Visit</div>
+<div class="achieve-desc">Visited ±800kV HVDC power grid at Tapshikhata, Alipurduar — exposure to India's high-voltage transmission infrastructure.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">🏭</div>
+<div>
+<div class="achieve-title">WBSEDCL Substation Visit</div>
+<div class="achieve-desc">Industrial visit to 33/11kV distribution substation, Falakata — practical exposure to power distribution systems.</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">🏆</div>
+<div>
+<div class="achieve-title">82% · Workplace Skills</div>
+<div class="achieve-desc">Scored 82% in Wadhwani Foundation's Effective Workplace Skills certification (2024).</div>
+</div>
+</div>
+<div class="achieve-card">
+<div class="achieve-icon">📊</div>
+<div>
+<div class="achieve-title">CGPA 8.20 · Diploma</div>
+<div class="achieve-desc">Maintained strong academic performance across 6 semesters of Electrical Engineering diploma at Falakata Polytechnic.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RESEARCH PUBLICATION -->
+<section id="publication" style="background:var(--deep);padding:5rem 2rem;">
+<div class="section-inner">
+<div class="section-eyebrow">RESEARCH &amp; PUBLICATION</div>
+<h2 class="section-title">Published Research<br/>&amp; Conference Work</h2>
+<p class="section-desc">Two peer-reviewed papers published in 2026 as first author — presented at international conferences in Malda and Kolkata.</p>
+<div class="reveal" style="margin-top:3rem;">
+<!-- Conference Photo -->
+<div class="pub-grid-responsive" style="display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;align-items:start;margin-bottom:2.5rem;">
+<div>
+<img alt="Prayas Das presenting at PEIS 2026" src="assets/profile-4.jpg" style="width:100%;border-radius:14px;border:1px solid rgba(0,210,255,0.25);object-fit:cover;"/>
+<div style="text-align:center;margin-top:0.75rem;font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;">PEIS 2026 · International Conference Presentation</div>
+</div>
+<div>
+<!-- Paper Card -->
+<div style="background:var(--card);border:1px solid rgba(0,210,255,0.3);border-radius:14px;padding:2rem;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00D2FF,#0066FF);"></div>
+<div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.85rem;background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.25);border-radius:100px;font-size:0.68rem;font-weight:700;color:#00FF88;letter-spacing:0.1em;margin-bottom:1.25rem;">
+              ✅ PUBLISHED
+            </div>
+<div style="font-size:0.65rem;color:var(--blue);letter-spacing:0.2em;font-family:'Orbitron',monospace;margin-bottom:0.75rem;">RESEARCH PAPER · FIRST AUTHOR</div>
+<h3 style="font-size:1.05rem;font-weight:700;line-height:1.45;margin-bottom:1rem;color:var(--white);">
+              "Machine-Learning-Enhanced Human-in-the-Loop Adaptive Motor Control for Personalized Pedal-Effort in E-Bicycles"
+            </h3>
+<div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.25rem;">
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Conference</span>
+<span style="font-size:0.82rem;font-weight:600;">PEIS 2026 — International Conference on Power, Electronics &amp; Intelligent Systems</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Date</span>
+<span style="font-size:0.82rem;font-weight:600;">3–4 April 2026</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Published In</span>
+<span style="font-size:0.82rem;font-weight:600;">Book Chapter &amp; Proceedings · Recognized Area Journal</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Role</span>
+<span style="font-size:0.82rem;font-weight:700;color:var(--cyan);">First Author &amp; Presenter</span>
+</div>
+</div>
+<div style="padding:0.75rem 1rem;background:rgba(0,210,255,0.06);border-left:2px solid var(--blue);border-radius:0 6px 6px 0;font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem;">
+<strong style="color:var(--white);">Abstract:</strong> This paper presents an ML-enhanced adaptive motor control system that personalizes pedal-effort assistance in e-bicycles using human-in-the-loop feedback, physiological signals, and real-time sensor data — improving rider experience and energy efficiency.
+            </div>
+<div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+<span class="tech-tag">Machine Learning</span>
+<span class="tech-tag">E-Bicycle</span>
+<span class="tech-tag">Motor Control</span>
+<span class="tech-tag">IoT</span>
+<span class="tech-tag">Embedded Systems</span>
+<span class="tech-tag">Human-in-the-Loop</span>
+<span class="tech-tag">Adaptive Control</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Second Paper Card -->
+<div style="background:var(--card);border:1px solid rgba(0,210,255,0.3);border-radius:14px;padding:2rem;position:relative;overflow:hidden;margin-bottom:2rem;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0066FF,#00D2FF);"></div>
+<div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.85rem;background:rgba(0,255,136,0.1);border:1px solid rgba(0,255,136,0.25);border-radius:100px;font-size:0.68rem;font-weight:700;color:#00FF88;letter-spacing:0.1em;margin-bottom:1.25rem;">
+          ✅ PUBLISHED
+        </div>
+<div style="font-size:0.65rem;color:var(--blue);letter-spacing:0.2em;font-family:'Orbitron',monospace;margin-bottom:0.75rem;">RESEARCH PAPER · FIRST AUTHOR</div>
+<h3 style="font-size:1.05rem;font-weight:700;line-height:1.45;margin-bottom:1rem;color:var(--white);">
+          "Data-Driven Predictive Torque Optimization for Human-in-the-Loop Adaptive E-Bike Control Using Hybrid Machine Learning Models"
+        </h3>
+<div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.25rem;">
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Conference</span>
+<span style="font-size:0.82rem;font-weight:600;">ICVCS 2026 — International Conference on Vision and Computing Systems, Kolkata</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Date</span>
+<span style="font-size:0.82rem;font-weight:600;">4–5 July 2026 · Presented in Person</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Published In</span>
+<span style="font-size:0.82rem;font-weight:600;">Conference Proceedings · Recognized Area Journal</span>
+</div>
+<div style="display:flex;gap:0.75rem;align-items:flex-start;">
+<span style="font-size:0.75rem;color:var(--muted);min-width:90px;flex-shrink:0;">Role</span>
+<span style="font-size:0.82rem;font-weight:700;color:var(--cyan);">First Author &amp; Presenter</span>
+</div>
+</div>
+<div style="padding:0.75rem 1rem;background:rgba(0,210,255,0.06);border-left:2px solid var(--blue);border-radius:0 6px 6px 0;font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem;">
+<strong style="color:var(--white);">Abstract:</strong> Applies MATLAB Regression Learner modeling, torque/cadence sensing, and multi-objective optimization for adaptive e-bike control — achieving personalized pedal effort through hybrid ML models that predict optimal torque output in real time.
+        </div>
+<div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+<span class="tech-tag">MATLAB Regression Learner</span>
+<span class="tech-tag">Hybrid ML Models</span>
+<span class="tech-tag">Torque Sensing</span>
+<span class="tech-tag">Cadence Sensing</span>
+<span class="tech-tag">Multi-Objective Optimization</span>
+<span class="tech-tag">E-Bike Control</span>
+<span class="tech-tag">Human-in-the-Loop</span>
+</div>
+</div>
+<!-- Speaking photo -->
+<div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.75rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+<img alt="Prayas Das speaking at GKCIET" src="assets/profile-5.jpg" style="width:280px;border-radius:10px;border:1px solid rgba(0,210,255,0.2);object-fit:cover;flex-shrink:0;"/>
+<div>
+<div style="font-family:'Orbitron',monospace;font-size:0.62rem;color:var(--blue);letter-spacing:0.2em;margin-bottom:0.5rem;">PUBLIC SPEAKING · GKCIET</div>
+<h4 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Conference Organizer &amp; Speaker</h4>
+<p style="color:var(--muted);font-size:0.85rem;line-height:1.7;max-width:480px;">Actively participated as an organizer and speaker at PEIS 2026, presenting original research to international academic and industry audiences. Demonstrated expertise in ML-based embedded systems and adaptive control.</p>
+<div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+<span class="interest-tag">🎤 International Conference</span>
+<span class="interest-tag">📝 First Author Paper</span>
+<span class="interest-tag">🏛️ GKCIET Organizer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="intro-strip">
-      <div><strong>01</strong><span>Curiosity-led engineering</span></div><div><strong>02</strong><span>Research & experimentation</span></div><div><strong>03</strong><span>Practical problem solving</span></div>
-    </section>
+<!-- BEYOND ENGINEERING -->
+<section id="beyond">
+<div class="section-inner">
+<div class="section-eyebrow">PERSONAL</div>
+<h2 class="section-title">Beyond<br/>Engineering</h2>
+<p class="section-desc">The best engineers are well-rounded human beings. Sports, discipline, and creative pursuits fuel my engineering mindset.</p>
+<div class="beyond-grid reveal">
+<div class="beyond-card">
+<div class="beyond-icon">⚽</div>
+<div class="beyond-title">Football</div>
+<div class="beyond-sub">Teamwork, strategy, and never giving up</div>
+</div>
+<div class="beyond-card">
+<div class="beyond-icon">♟️</div>
+<div class="beyond-title">Chess</div>
+<div class="beyond-sub">Pattern recognition and strategic thinking</div>
+</div>
+<div class="beyond-card">
+<div class="beyond-icon">🏐</div>
+<div class="beyond-title">Volleyball</div>
+<div class="beyond-sub">Coordination, reflexes, team spirit</div>
+</div>
+<div class="beyond-card">
+<div class="beyond-icon">🏋️</div>
+<div class="beyond-title">Weight Training</div>
+<div class="beyond-sub">Discipline, consistency, growth mindset</div>
+</div>
+<div class="beyond-card">
+<div class="beyond-icon">🔥</div>
+<div class="beyond-title">Fitness</div>
+<div class="beyond-sub">Home workouts and daily physical discipline</div>
+</div>
+<div class="beyond-card">
+<div class="beyond-icon">🌱</div>
+<div class="beyond-title">Continuous Learning</div>
+<div class="beyond-sub">Certifications, online courses, self-improvement</div>
+</div>
+</div>
+<div class="beyond-photos-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;">
+<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(0,210,255,0.2);position:relative;">
+<img alt="Prayas Das" src="assets/profile-6.jpg" style="width:100%;height:320px;object-fit:cover;display:block;"/>
+<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(11,15,25,0.9),transparent);">
+<div style="font-size:0.72rem;font-weight:600;color:var(--white);">Life Beyond the Lab</div>
+<div style="font-size:0.65rem;color:var(--muted);">Staying grounded, staying curious</div>
+</div>
+</div>
+<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(0,210,255,0.2);position:relative;">
+<img alt="Prayas Das at PEIS 2026" src="assets/profile-7.jpg" style="width:100%;height:320px;object-fit:cover;object-position:top;display:block;"/>
+<div style="position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(11,15,25,0.9),transparent);">
+<div style="font-size:0.72rem;font-weight:600;color:var(--white);">Conference Organizer · PEIS 2026</div>
+<div style="font-size:0.65rem;color:var(--muted);">Leadership beyond the classroom</div>
+</div>
+</div>
+</div>
 
-    <section class="section-wrap section" id="about">
-      <div class="section-heading"><p class="eyebrow">01 / ABOUT</p><h2>Curious by nature.<br><em>Engineer by choice.</em></h2></div>
-      <div class="about-grid">
-        <p class="about-statement">I enjoy exploring how electrical systems, intelligent control and connected devices can solve practical problems.</p>
-        <div class="about-detail"><p>I completed a Diploma in Electrical Engineering and am pursuing a B.Tech in Electrical Engineering. Alongside academics, I take part in student coordination, innovation activities and technical projects.</p><p>My current interests include renewable-energy integration, power and control systems, IoT, embedded systems, machine learning applications and electric mobility.</p><div class="tag-row"><span>Problem solving</span><span>Team coordination</span><span>Continuous learning</span></div></div>
-      </div>
-    </section>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="section-inner">
+<div class="section-eyebrow">CONTACT</div>
+<h2 class="section-title">Let's Build<br/>Something Together</h2>
+<p class="section-desc">Open to freelance projects, research collaboration, internships, and full-time opportunities. Let's talk.</p>
+<div class="contact-wrap reveal">
+<div class="contact-info">
+<div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:0.85rem;">
+<div style="display:flex;align-items:center;gap:0.75rem;">
+<div class="contact-link-icon" style="background:rgba(234,67,53,0.1);border:1px solid rgba(234,67,53,0.2);">📧</div>
+<div>
+<div class="contact-link-label">EMAIL</div>
+<div class="contact-link-val">prayas629@gmail.com  |  prayas_23ee279@gkciet.ac.in</div>
+</div>
+</div>
+<div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+<a href="mailto:prayas629@gmail.com" onmouseout="this.style.boxShadow='none'" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,210,255,0.4)'" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;background:linear-gradient(135deg,#00D2FF,#0066FF);color:#000;font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:700;border-radius:6px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s ease;">
+              📧 Personal Email
+            </a>
+<a href="mailto:prayas_23ee279@gkciet.ac.in" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(0,210,255,0.1)'" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;background:transparent;color:var(--blue);font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:700;border:1px solid var(--blue);border-radius:6px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s ease;">
+              🎓 Academic Email
+            </a>
+</div>
+</div>
+<a class="contact-link" href="https://www.linkedin.com/in/prayas-das" target="_blank">
+<div class="contact-link-icon" style="background:rgba(0,119,181,0.1);border:1px solid rgba(0,119,181,0.25);">💼</div>
+<div>
+<div class="contact-link-label">LINKEDIN</div>
+<div class="contact-link-val">linkedin.com/in/prayas-das</div>
+</div>
+</a>
+<a class="contact-link" href="tel:+916295170686">
+<div class="contact-link-icon" style="background:rgba(0,210,255,0.1);border:1px solid rgba(0,210,255,0.2);">📱</div>
+<div>
+<div class="contact-link-label">PHONE / WHATSAPP</div>
+<div class="contact-link-val">+91 6295170686</div>
+</div>
+</a>
+<div class="contact-link" style="flex-direction:column;align-items:flex-start;gap:0.85rem;">
+<div style="display:flex;align-items:center;gap:0.75rem;">
+<div class="contact-link-icon" style="background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);">💬</div>
+<div>
+<div class="contact-link-label">WHATSAPP</div>
+<div class="contact-link-val">+91 6295170686</div>
+</div>
+</div>
+<a href="https://wa.me/916295170686?text=Hi%20Prayas!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." onmouseout="this.style.boxShadow='none'" onmouseover="this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.25rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:700;border-radius:6px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s ease;" target="_blank">
+            💬 Message on WhatsApp
+          </a>
+</div>
+<div style="padding:1.25rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;">
+<div style="font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:0.3rem;">LOCATION</div>
+<div style="font-weight:600;font-size:0.88rem;">Alipurduar, West Bengal, India 🇮🇳</div>
+</div>
+</div>
+<div>
+<div class="contact-form" id="contactForm">
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">FULL NAME</label>
+<input class="form-input" id="cName" placeholder="Your name" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">EMAIL ADDRESS</label>
+<input class="form-input" id="cEmail" placeholder="your@email.com" type="email"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">SUBJECT</label>
+<input class="form-input" id="cSubject" placeholder="Project inquiry / Collaboration / Opportunity" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">MESSAGE</label>
+<textarea class="form-textarea" id="cMessage" placeholder="Tell me about your project or opportunity..."></textarea>
+</div>
+<button class="btn-primary" onclick="sendEmail()" style="width:100%;justify-content:center;font-size:0.9rem;padding:0.9rem;">
+            ⚡ Send Message
+          </button>
+<p class="form-note">Or reach me directly at <strong style="color:var(--blue)">prayas629@gmail.com</strong></p>
+<div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--card);border:1px solid rgba(0,210,255,0.25);border-radius:12px;text-align:center;">
+<div style="font-size:0.7rem;color:var(--muted);letter-spacing:0.15em;margin-bottom:0.6rem;font-family:'Orbitron',monospace;">CURRICULUM VITAE</div>
+<p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.9rem;line-height:1.6;">Want to know more about my education, projects, and experience? View my full CV on Google Drive.</p>
+<a href="https://drive.google.com/file/d/1F8Nb5Gcrf4r5DMMxkr7BEsEKMWwVbQjt/view?usp=sharing" onmouseout="this.style.boxShadow='none'" onmouseover="this.style.boxShadow='0 6px 25px rgba(0,210,255,0.4)'" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.65rem 1.5rem;background:linear-gradient(135deg,#00D2FF,#0066FF);color:#000;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s ease;" target="_blank">
+              📄 View My CV on Google Drive →
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-name">PRAYAS DAS</div>
+<p class="footer-quote">"Engineering is not about solving today's problems. It is about building tomorrow's possibilities."</p>
+<div class="footer-links">
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="mailto:prayas629@gmail.com">Email (Personal)</a>
+<a href="mailto:prayas_23ee279@gkciet.ac.in">Email (Academic)</a>
+<a href="https://www.linkedin.com/in/prayas-das" target="_blank">LinkedIn</a>
+</div>
+<p class="footer-copy">© 2026 Prayas Das · All Rights Reserved · 2× Published Researcher · Made with ⚡ in West Bengal, India</p>
+</footer>
 
-    <section class="section-wrap section" id="education">
-      <div class="section-heading"><p class="eyebrow">02 / EDUCATION</p><h2>Academic <em>foundation.</em></h2></div>
-      <div class="timeline">
-        <article class="timeline-item"><div class="timeline-date">CURRENT</div><div><h3>B.Tech — Electrical Engineering</h3><p class="institution">Ghani Khan Choudhury Institute of Engineering & Technology (GKCIET)</p><p>Affiliated to MAKAUT · Lateral entry · Undergraduate studies</p></div><span class="timeline-index">01</span></article>
-        <article class="timeline-item"><div class="timeline-date">COMPLETED · 2024</div><div><h3>Diploma — Electrical Engineering</h3><p class="institution">Falakata Polytechnic Institute</p><p>Foundation in electrical engineering principles and practical laboratory work.</p></div><span class="timeline-index">02</span></article>
-      </div>
-      <p class="small-note">Update your current semester and graduation year in <code>index.html</code> whenever they change.</p>
-    </section>
-
-    <section class="section-wrap section" id="projects">
-      <div class="section-heading"><p class="eyebrow">03 / SELECTED WORK</p><h2>Projects built around<br><em>real-world problems.</em></h2></div>
-      <div class="project-grid">
-        <article class="project-card project-featured"><div class="project-number">PROJECT / 01</div><div class="project-icon">⌁</div><h3>Smart Home Energy Management with Solar Integration</h3><p>A proposed IoT-enabled energy management concept exploring solar utilisation, battery storage and intelligent load scheduling using Model Predictive Control (MPC).</p><div class="tag-row"><span>Solar PV</span><span>MPC</span><span>IoT</span><span>Energy storage</span></div><div class="project-foot"><span>ENERGY SYSTEMS</span><span>↗</span></div></article>
-        <article class="project-card"><div class="project-number">PROJECT / 02</div><div class="project-icon">⌗</div><h3>IoT RFID Attendance System</h3><p>An RFID-based attendance concept using NodeMCU ESP8266 and RC522, with attendance records connected to Google Sheets.</p><div class="tag-row"><span>ESP8266</span><span>RFID RC522</span><span>Google Sheets</span></div><div class="project-foot"><span>EMBEDDED & IoT</span><span>↗</span></div></article>
-        <article class="project-card"><div class="project-number">PROJECT / 03</div><div class="project-icon">↗</div><h3>Human-Centric E-Bike Control</h3><p>Data-driven torque optimisation research concept combining rider and vehicle signals to explore adaptive motor assistance and energy-aware control.</p><div class="tag-row"><span>Machine Learning</span><span>MATLAB</span><span>Electric mobility</span></div><div class="project-foot"><span>INTELLIGENT MOBILITY</span><span>↗</span></div></article>
-      </div>
-      <p class="small-note">Project descriptions are concise summaries. Add GitHub repositories, diagrams, results and demo links when available.</p>
-    </section>
-
-    <section class="section-wrap section research-section" id="research">
-      <div class="section-heading"><p class="eyebrow">04 / RESEARCH</p><h2>Questions worth<br><em>investigating.</em></h2></div>
-      <div class="research-card">
-        <div class="research-label">RESEARCH FOCUS · ELECTRIC MOBILITY + MACHINE LEARNING</div>
-        <h3>Data-Driven Predictive Torque Optimization for Human-Centric E-Bike Control Using Hybrid ML Models</h3>
-        <p>Exploring how rider-centric signals and operating conditions can inform adaptive e-bike torque assistance. The research direction brings together human-in-the-loop thinking, predictive modelling and energy-aware control.</p>
-        <div class="research-metrics"><div><strong>01</strong><span>Rider & vehicle signals</span></div><div><strong>02</strong><span>Predictive modelling</span></div><div><strong>03</strong><span>Adaptive torque control</span></div></div>
-        <p class="small-note">This is presented as a research focus, not as a claim of publication or acceptance. Add conference and DOI details only after official publication.</p>
-      </div>
-    </section>
-
-    <section class="section-wrap section" id="skills">
-      <div class="section-heading"><p class="eyebrow">05 / TOOLKIT</p><h2>Skills & <em>interests.</em></h2></div>
-      <div class="skills-grid">
-        <div class="skill-group"><span class="skill-index">A</span><h3>Core electrical</h3><p>Electrical machines · Power systems · Power electronics · Control systems · Network theory · Measurements</p></div>
-        <div class="skill-group"><span class="skill-index">B</span><h3>Software & simulation</h3><p>MATLAB · Arduino IDE · PSIM · ETAP · Scilab · VS Code</p></div>
-        <div class="skill-group"><span class="skill-index">C</span><h3>Embedded & digital</h3><p>NodeMCU ESP8266 · ESP32 · RFID RC522 · Sensors · IoT concepts</p></div>
-        <div class="skill-group"><span class="skill-index">D</span><h3>Emerging interests</h3><p>Machine learning · Renewable energy · Smart grids · Electric vehicles · Data-driven optimisation</p></div>
-      </div>
-      <p class="small-note">Keep only tools and skills you can confidently discuss in an interview.</p>
-    </section>
-
-    <section class="section-wrap section involvement-section">
-      <div class="section-heading"><p class="eyebrow">06 / CAMPUS & LEADERSHIP</p><h2>Learning beyond<br><em>the classroom.</em></h2></div>
-      <div class="involvement-list">
-        <div><span>01</span><h3>Student Coordinator — Training & Placement Office</h3><p>GKCIET</p></div>
-        <div><span>02</span><h3>Member — Entrepreneurship Cell</h3><p>GKCIET</p></div>
-        <div><span>03</span><h3>Innovation Idea Pitching Coordinator</h3><p>TechPrabha 2026</p></div>
-        <div><span>04</span><h3>Student event coordination</h3><p>Campus activities & student engagement</p></div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="section-wrap contact-inner"><p class="eyebrow">07 / CONTACT</p><h2>Have an idea?<br><em>Let's connect.</em></h2><p>I'm interested in meaningful engineering conversations, research collaboration and opportunities to learn and contribute.</p><div class="contact-links"><a id="emailLink" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a><a id="githubLink" href="https://github.com/prayasee" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
-    </section>
-  </main>
-  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">P<span>.</span></span><span>PRAYAS DAS</span></a><span>DESIGNED TO LEARN · BUILT TO GROW</span><span>© <span id="year"></span> PRAYAS DAS</span></footer>
-</body>
+<script defer="True" src="script.js"></script></body>
 </html>
